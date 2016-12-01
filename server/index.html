@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://cdn.jsdelivr.net/superagent/0.18.0/superagent.min.js"></script>
+</head>
+<body>
+    <label>light:</label>
+    <input type="checkbox" onclick="flip(this)">
+    <script>
+        function flip(checkbox) {
+            superagent
+                .put('/light')
+                .query({ on: checkbox.checked })
+                .end();
+        }
+    </script>
+</body>
+</html>
